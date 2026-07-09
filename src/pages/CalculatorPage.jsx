@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { ArrowRight, Calculator, Check, Clock3, Info, Ruler, ShieldCheck } from 'lucide-react'
 import { SiteFooter } from '../components/SiteFooter.jsx'
 import { SiteHeader } from '../components/SiteHeader.jsx'
+import { siteSeo, usePageSeo } from '../seo.js'
 import {
   additionalServices,
   calculateEstimate,
@@ -17,6 +18,8 @@ import {
 const cad = new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD', maximumFractionDigits: 0 })
 
 export function CalculatorPage() {
+  usePageSeo(siteSeo.calculator)
+
   const [projectId, setProjectId] = useState('driveway')
   const [finishId, setFinishId] = useState('standard')
   const [quantity, setQuantity] = useState('350')
@@ -25,18 +28,6 @@ export function CalculatorPage() {
   const [reinforcementId, setReinforcementId] = useState('mesh')
 
   const estimate = calculateEstimate({ projectId, finishId, quantity, removal, excavation, reinforcementId })
-
-  useEffect(() => {
-    const previousTitle = document.title
-    const description = document.querySelector('meta[name="description"]')
-    const previousDescription = description?.getAttribute('content')
-    document.title = 'Concrete Cost Calculator Winnipeg | ARCED'
-    description?.setAttribute('content', 'Estimate concrete project costs in Winnipeg by project type, finish, area, demolition, excavation and reinforcement.')
-    return () => {
-      document.title = previousTitle
-      if (previousDescription) description?.setAttribute('content', previousDescription)
-    }
-  }, [])
 
   return (
     <>

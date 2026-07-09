@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://arcedconstruction.ca/sitemap.xml
+Host: https://arcedconstruction.ca
