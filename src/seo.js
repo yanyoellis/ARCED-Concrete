@@ -127,6 +127,7 @@ const homeDescription = 'Professional concrete services in Winnipeg for driveway
 const calculatorDescription = 'Estimate concrete project costs in Winnipeg by project type, finish, square footage, demolition, excavation and reinforcement.'
 const privacyDescription = 'Privacy Policy for ARCED Construction Group LTD. and its Winnipeg concrete services website.'
 const termsDescription = 'Terms of Use for ARCED Construction Group LTD. and its Winnipeg concrete services website.'
+const reviewsAdminDescription = 'Private review moderation page for ARCED Construction Group LTD.'
 
 export const siteSeo = {
   home: {
@@ -158,6 +159,14 @@ export const siteSeo = {
     image: '/assets/arced-logo.png',
     robots: 'noindex, follow',
     schema: [businessSchema, websiteSchema, pageSchema('/terms-of-use', 'Terms of Use | ARCED Construction Group LTD', termsDescription)],
+  },
+  reviewsAdmin: {
+    title: 'Review Admin | ARCED Construction Group LTD',
+    description: reviewsAdminDescription,
+    canonicalPath: '/admin-reviews',
+    image: '/assets/arced-logo.png',
+    robots: 'noindex, nofollow',
+    schema: [pageSchema('/admin-reviews', 'Review Admin | ARCED Construction Group LTD', reviewsAdminDescription)],
   },
 }
 
