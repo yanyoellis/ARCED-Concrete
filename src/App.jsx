@@ -24,16 +24,16 @@ import { privacyPolicy, termsOfUse } from './legalContent.js'
 import { siteSeo, usePageSeo } from './seo.js'
 
 const services = [
-  { icon: SquareStack, title: 'Standard Concrete Slabs', copy: 'Prepared, reinforced and professionally finished slabs for garages, workshops and utility areas.' },
-  { icon: Grid2X2, title: 'Concrete Driveways', copy: 'Durable driveway construction with excavation, compacted base, reinforcement and control joints.' },
-  { icon: Sparkles, title: 'Concrete Patios', copy: 'Clean, well-drained patio surfaces finished for comfortable outdoor living.' },
-  { icon: Layers3, title: 'Concrete Sidewalks', copy: 'Precisely formed walks and pathways with a stable base and dependable finish.' },
-  { icon: SquareStack, title: 'Concrete Steps', copy: 'Reinforced concrete steps with accurate formwork, edges and surface finishing.' },
-  { icon: Building2, title: 'Concrete Foundations', copy: 'Layout, reinforcement, placement and finishing for structural concrete foundation work.' },
-  { icon: Grid2X2, title: 'Garage Floors', copy: 'Machine-finished garage slabs with proper compaction, reinforcement and control joints.' },
-  { icon: Sparkles, title: 'Stamped Concrete', copy: 'Decorative stamped surfaces with premium finishing, colouring and protective sealer.' },
-  { icon: Layers3, title: 'Exposed Aggregate', copy: 'Textured aggregate concrete with professional surface washing and sealing.' },
-  { icon: Hammer, title: 'Concrete Replacement', copy: 'Removal, hauling, base correction and complete replacement of worn concrete.' },
+  { icon: SquareStack, title: 'Standard Concrete Slabs', copy: 'Concrete slab installation in Winnipeg for garages, workshops, sheds, utility areas and storage buildings.' },
+  { icon: Grid2X2, title: 'Concrete Driveways', copy: 'Concrete driveway installation with excavation, compacted gravel base, reinforcement, finishing and control joints.' },
+  { icon: Sparkles, title: 'Concrete Patios', copy: 'Concrete patio installation for backyard spaces, outdoor living areas and residential concrete upgrades.' },
+  { icon: Layers3, title: 'Concrete Sidewalks', copy: 'Concrete sidewalks, walkways and paths with stable base preparation, formwork and dependable finishing.' },
+  { icon: SquareStack, title: 'Concrete Steps', copy: 'Concrete steps and entry stairs with reinforcement, detailed edges, accurate formwork and cleanup.' },
+  { icon: Building2, title: 'Concrete Foundations', copy: 'Concrete foundation work with layout, formwork, reinforcement, concrete placement, vibration and finishing.' },
+  { icon: Grid2X2, title: 'Garage Floors', copy: 'Garage floor concrete slabs with compaction, reinforcement, machine finish and control joints.' },
+  { icon: Sparkles, title: 'Stamped Concrete', copy: 'Stamped concrete patios, walks and decorative concrete finishes with colouring and protective sealer.' },
+  { icon: Layers3, title: 'Exposed Aggregate', copy: 'Exposed aggregate concrete with surface washing, sealing and a textured decorative finish.' },
+  { icon: Hammer, title: 'Concrete Replacement', copy: 'Concrete demolition, removal, hauling, base correction and replacement for old or cracked concrete.' },
 ]
 
 const serviceImages = {
@@ -81,13 +81,45 @@ const reviewProjectOptions = [
   'Concrete replacement',
 ]
 
+const searchServices = [
+  ['Concrete Driveway Winnipeg', 'Driveway excavation, gravel base, compaction, reinforcement, concrete pouring, finishing and control joints.'],
+  ['Concrete Patio Contractor', 'Backyard patios, outdoor concrete pads and broom-finish or decorative patio surfaces for Winnipeg homes.'],
+  ['Garage Floor Concrete', 'Garage floor slabs with base preparation, reinforcement, machine finishing and cleanup.'],
+  ['Concrete Slab Installation', 'Concrete slabs for workshops, sheds, storage buildings, utility areas and residential or commercial projects.'],
+  ['Sidewalks, Walkways & Steps', 'Concrete sidewalks, walkways, entry steps and small access paths with proper formwork and finishing.'],
+  ['Stamped & Exposed Aggregate Concrete', 'Decorative concrete options including stamped concrete, exposed aggregate, sealer and finish upgrades.'],
+  ['Concrete Replacement & Demolition', 'Removal of existing concrete, debris hauling, excavation correction, new base and replacement concrete.'],
+  ['Concrete Foundation Work', 'Foundation layout, reinforcement, formwork, concrete placement, vibration, finishing and cleanup.'],
+]
+
+const serviceAreaKeywords = [
+  'Concrete contractor Winnipeg',
+  'Concrete services Winnipeg',
+  'Concrete driveway Winnipeg',
+  'Concrete patio Winnipeg',
+  'Garage floor concrete Winnipeg',
+  'Concrete slab Winnipeg',
+  'Concrete sidewalk Winnipeg',
+  'Stamped concrete Winnipeg',
+  'Concrete replacement Winnipeg',
+  'Winnipeg & surrounding areas',
+  'Headingley',
+  'Oak Bluff',
+  'East St. Paul',
+  'West St. Paul',
+]
+
 const faqs = [
-  ['Do you work only in Winnipeg?', 'ARCED is based in Winnipeg. For projects outside the city, share your location in the estimate form and we can confirm availability.'],
+  ['Do you work only in Winnipeg?', 'ARCED is based in Winnipeg and serves Winnipeg and surrounding areas. For nearby communities such as Headingley, Oak Bluff, East St. Paul or West St. Paul, share your address and we can confirm availability.'],
   ['Do you remove existing concrete?', 'Yes. Concrete demolition, loading and waste disposal can be included in the project scope.'],
   ['Is excavation included?', 'Standard excavation is included in selected primary services. Additional excavation is priced when site depth or conditions require more work.'],
   ['Do you provide reinforcement?', 'Yes. Standard mesh or reinforcement is included where specified, with rebar upgrades available when required.'],
   ['Do you offer a warranty?', 'Yes. Completed concrete work is backed by a two-year workmanship warranty.'],
   ['How is pricing calculated?', 'Pricing depends on project size, access, excavation, base condition, reinforcement, concrete thickness and finish. A site inspection is required for a final quote.'],
+  ['What concrete services do you offer in Winnipeg?', 'ARCED provides concrete driveways, patios, sidewalks, garage floors, concrete slabs, foundations, concrete steps, stamped concrete, exposed aggregate and concrete replacement in Winnipeg.'],
+  ['Can I get an estimate for a concrete contractor near me?', 'Yes. Use the estimate form or concrete cost calculator and include your Winnipeg address, square footage, project type, finish preference and whether old concrete needs removal.'],
+  ['Do you install stamped concrete or exposed aggregate?', 'Yes. Decorative concrete options include stamped concrete, exposed aggregate concrete, sealer and selected finish upgrades depending on the project.'],
+  ['Do you handle concrete demolition and replacement?', 'Yes. Concrete replacement can include demolition, debris hauling, excavation correction, gravel base installation, reinforcement and new concrete finishing.'],
 ]
 
 const FORMSPREE_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT || ''
@@ -143,7 +175,7 @@ function Services() {
         <div className="featured-services-grid">
           {services.slice(0, 6).map(({ icon: Icon, title, copy }) => (
             <article className="service-card" key={title}>
-              <div className="service-image"><img src={serviceImages[title]} alt="" /></div>
+              <div className="service-image"><img src={serviceImages[title]} alt={`${title} in Winnipeg by ARCED Construction Group`} /></div>
               <div className="service-icon"><Icon strokeWidth={1.6} aria-hidden="true" /></div>
               <div className="service-content">
                 <h3>{title}</h3>
@@ -156,6 +188,36 @@ function Services() {
         <div className="additional-services" aria-label="Additional concrete services">
           <p>More ways we can help</p>
           {services.slice(6).map(({ icon: Icon, title }) => <a href="#contact" key={title}><Icon aria-hidden="true" />{title}<ArrowRight aria-hidden="true" /></a>)}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function SearchCoverage() {
+  return (
+    <section className="section seo-coverage" aria-labelledby="concrete-seo-title">
+      <div className="shell">
+        <div className="seo-coverage-layout">
+          <div className="seo-coverage-copy">
+            <p className="eyebrow">Winnipeg concrete contractor</p>
+            <h2 id="concrete-seo-title">Concrete Services in Winnipeg for Driveways, Patios, Slabs & Garage Floors</h2>
+            <p>ARCED Construction Group LTD helps homeowners, builders and commercial clients looking for a concrete contractor near me in Winnipeg. The work can include concrete driveway installation, concrete patios, sidewalks, garage floors, slabs, steps, foundation work, stamped concrete, exposed aggregate and concrete replacement.</p>
+            <p>Strong concrete starts below the surface: excavation, grading, gravel base, compaction, formwork, reinforcement, concrete thickness, finishing, joint cutting and cleanup all affect the final result.</p>
+            <a className="text-link" href="/calculator">Estimate concrete project cost <ArrowRight aria-hidden="true" /></a>
+          </div>
+          <div className="seo-keyword-grid">
+            {searchServices.map(([title, copy]) => (
+              <article className="seo-keyword-card" key={title}>
+                <Check aria-hidden="true" />
+                <h3>{title}</h3>
+                <p>{copy}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+        <div className="seo-area-strip" aria-label="Concrete service keywords and areas">
+          {serviceAreaKeywords.map((keyword) => <span key={keyword}>{keyword}</span>)}
         </div>
       </div>
     </section>
@@ -377,6 +439,7 @@ function HomePage() {
       <SiteHeader />
       <Hero />
       <Services />
+      <SearchCoverage />
       <WhyUs />
       <Process />
       <Projects />
